@@ -23,7 +23,8 @@
         # 'security/ir.model.access.csv',
         'security/security.xml',
         'views/sales_man_branch_view.xml',
-	#'wizards/recap.xml',
+        'views/product_serial_no_view.xml',
+        #'wizards/recap.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

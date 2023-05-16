@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<!--     sale order-->
+
+    <record id="sale_order_line_product_serial_no" model="ir.ui.view">
+            <field name="name">sales.order.line.product_serial_no</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+                  <xpath expr = "//field[@name = 'order_line']/tree/field[@name = 'name']" position = "after" >
+                       <field name="product_serial_no" optional="hide" />
+                 </xpath>
+            </field>
+    </record>
+
+     <record id="sale_order_line_prod_serial_no" model="ir.ui.view">
+                <field name="name">sales Order serial no search</field>
+                <field name="model">sale.order</field>
+                <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+                <field name="arch" type="xml">
+                       <xpath expr="//search" position="inside">
+                            <field name="order_line" string="رقم التسلسلي"
+                                         filter_domain="[('order_line.product_serial_no', 'ilike', self)]"/>
+                    </xpath>
+                </field>
+	    </record>
+<!--     account move -->
+
+    <record id="account_line_product_serial_no" model="ir.ui.view">
+            <field name="name">account.line.product_serial_no</field>
+            <field name="model">account.move</field>
+                <field name="inherit_id" ref="account.view_move_form" />
+            <field name="arch" type="xml">
+                  <xpath expr = "//field[@name = 'invoice_line_ids']/tree/field[@name = 'name']" position = "after" >
+                       <field name="product_serial_no" optional="hide" />
+                 </xpath>
+            </field>
+    </record>
+
+     <record id="account_line_prod_serial_no" model="ir.ui.view">
+                <field name="name">account line serial no search</field>
+            <field name="model">account.move</field>
+                    <field name="inherit_id" ref="account.view_account_invoice_filter" />
+                <field name="arch" type="xml">
+                       <xpath expr="//search" position="inside">
+                            <field name="invoice_line_ids" string="رقم التسلسلي"
+                                         filter_domain="[('invoice_line_ids.product_serial_no', 'ilike', self)]"/>
+                    </xpath>
+                </field>
+	    </record>
+
+</odoo>
