@@ -6,6 +6,8 @@
             <field name="inherit_id" ref="qimamhd_sales_forms.custom_saleMan_view" />
             <field name="arch" type="xml">
                <field name="sale_man_type" position="after">
+                   <field name="sale_user" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create': True}" />
+
                    <field name="branch_id"  options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create': True}"/>
                 </field>
             </field>
@@ -16,6 +18,7 @@
             <field name="inherit_id" ref="qimamhd_sales_forms.custom_sale_man_tree_view" />
             <field name="arch" type="xml">
                <field name="sale_man_type" position="after">
+                   <field name="sale_user" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create': True}" />
                     <field name="branch_id"  options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create': True}"/>
                 </field>
             </field>
