@@ -20,10 +20,11 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        'security/security.xml',
+        'security/ir.model.access.csv',
+        # 'security/security.xml',
         'views/sales_man_branch_view.xml',
-         #'wizards/recap.xml',
+        'views/hr_salesman_assignment.xml',
+        #'wizards/recap.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
