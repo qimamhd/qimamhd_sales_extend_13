@@ -7,7 +7,8 @@
             <field name="arch" type="xml">
                <field name="sale_man_type" position="after">
                    <field name="sale_user" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create': True}" />
-
+                   <field name="due_amount_type" />
+                   <field name="due_amount" />
                    <field name="branch_id"  options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create': True}"/>
                 </field>
             </field>
@@ -19,6 +20,8 @@
             <field name="arch" type="xml">
                <field name="sale_man_type" position="after">
                    <field name="sale_user" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create': True}" />
+                    <field name="due_amount_type" />
+                   <field name="due_amount" />
                     <field name="branch_id"  options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create': True}"/>
                 </field>
             </field>

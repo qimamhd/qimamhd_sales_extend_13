@@ -1,0 +1,71 @@
+<odoo>
+    <data>
+        <record id="sale_man_payment_py_config_settings_view" model="ir.ui.view">
+            <field name="name">sale man payment view inherited from bamalliss</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="30"/>
+            <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <div id="business_documents" position="after">
+
+                         <h2>اعدادات خاصة قمم تك[مندوب المبيعات]</h2>
+                   <div class="row mt16 o_settings_container" name="work_order">
+
+
+
+
+<!--                    <div class="col-12 col-lg-6 o_setting_box">-->
+<!--                        <div class="o_setting_left_pane">-->
+<!--                        </div>-->
+<!--                        <div class="o_setting_right_pane">-->
+<!--                            <label for="intermediate_sale_man_account_id"/>-->
+<!--                            <div class="text-muted">حساب الاقفال </div>-->
+<!--                        </div>-->
+<!--                        <field name="intermediate_sale_man_account_id"/>-->
+<!--                        <div class="o_setting_right_pane">-->
+<!--                            <label for="intermediate_sale_man_account_id"  />-->
+
+<!--                            <div class="content-group">-->
+<!--                                <div class="mt16 row">-->
+<!--                                    <label for="intermediate_sale_man_account_id" string="حساب الاقفال"  class="col-3 col-lg-3 o_light_label"/>-->
+<!--                                    <field name="intermediate_sale_man_account_id" class="oe_inline"  />-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                    </div>-->
+
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="post_sale_man_payment"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="post_sale_man_payment"/>
+                            <div class="text-muted">الترحيل للحسابات</div>
+                        </div>
+                    </div>
+
+<!--                    <div class="col-12 col-lg-6 o_setting_box">-->
+<!--                        <div class="o_setting_left_pane">-->
+<!--                            <group>-->
+<!--                                <group>-->
+<!--                                     <field name="show_register_payment_sale_order" on_change="1"/>-->
+<!--                                </group>-->
+<!--                                 <group>-->
+<!--                                     <field name="use_minus_qty" on_change="1"/>-->
+<!--                                </group>-->
+<!--                            </group>-->
+
+<!--                        </div>-->
+<!--&lt;!&ndash;                        <div class="o_setting_right_pane" id="snailmail_settings">&ndash;&gt;-->
+<!--                            <label for="show_register_payment_sale_order" />-->
+<!--&lt;!&ndash;                            <div class="text-muted">&ndash;&gt;-->
+<!--&lt;!&ndash;                                 &ndash;&gt;-->
+<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
+                        </div>
+                    </div>
+
+            </field>
+        </record>
+    </data>
+</odoo>

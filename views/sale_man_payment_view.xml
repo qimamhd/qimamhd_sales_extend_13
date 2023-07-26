@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="saleman_payment_form_view" model="ir.ui.view">
+            <field name="name">saleman.payment.form</field>
+            <field name="model">saleman.payment</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="confirm_payment" string="اعتماد" type="object" class="oe_highlight"
+                                     groups="qimamhd_sales_extend_13.group_allow_sale_man_payment_priv"
+                                 attrs="{'invisible': [('account_move_id','!=', False)]}"
+                        />
+                          <button name="un_confirm_payment" string="الغاء الاعتماد" type="object" class="oe_highlight"
+                                     groups="qimamhd_sales_extend_13.group_allow_sale_man_payment_priv"
+                                  attrs="{'invisible': [('account_move_id','=', False)]}"
+
+                        />
+                         </header>
+                    <sheet>
+                         <div class="oe_button_box" name="button_box">
+                             <button type="object"
+                                    name="call_entry"
+                                    class="oe_stat_button"
+                                     string="قيد الصرف"
+                                     groups="qimamhd_sales_extend_13.group_allow_sale_man_payment_priv"
+
+                                    attrs="{'invisible':[('account_move_id','=', False)]}"
+                                    icon="fa-arrow-right" >
+                             </button>
+
+
+                         </div>
+
+                          <br></br>
+                                   <group string="صرف مستحقات المندوبين">
+
+
+                                              <group>
+                                                    <field name="seq" readonly="1" string="رقم الطلب"/>
+
+                                                <field name="order_date" attrs="{'readonly': [('posted_flag','=', True)]}"/>
+
+                                                   <field name="company_id" string="الشركة" readonly="1" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create': True}" groups="base.group_multi_company"/>
+
+                                                <field name="journal_id"  attrs="{'readonly': [('posted_flag','=', True)]}"  options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create': True}"/>
+                                                 <field name="account_id"  attrs="{'readonly': [('posted_flag','=', True)]}" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create': True}"/>
+
+                                              </group>
+                                             <group>
+
+                                                <field name="sales_man_id"  attrs="{'readonly': [('posted_flag','=', True)]}" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create': True}"/>
+                                                <field name="amount"  attrs="{'readonly': [('posted_flag','=', True)]}"/>
+
+                                                <field name="description"  attrs="{'readonly': [('posted_flag','=', True)]}"/>
+
+                                            </group>
+                                            <group>
+                                                   <field name="user_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create': True}" readonly="1" string="مسئول المبيعات" />
+                                                <field name="id" readonly="1" string="رقم التسلسلي"/>
+
+
+
+                                            </group>
+                                            <group>
+
+                                                  <field name="branch_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create': True}" readonly="1" string="الفرع" />
+                                                 <field name="posted_flag"  readonly="1"/>
+
+                                                  <field name="source_so_id" invisible="1" />
+                                                <field name="source_move_id" invisible="1" />
+
+                                                <field name="account_move_id" invisible="1" />
+                                            </group>
+
+
+
+
+                                 </group>
+
+
+
+                       </sheet>
+                    <div class="oe_chatter">
+                             <field name="message_follower_ids" widget="mail_followers"/>
+    <!--                        <field name="activity_ids" widget="mail_activity"/>-->
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
+                   </form>
+            </field>
+        </record>
+      <!--make products Tree View-->
+        <record id="saleman_payment_tree_view" model="ir.ui.view">
+            <field name="name">saleman.payment.tree</field>
+            <field name="model">saleman.payment</field>
+            <field name="arch" type="xml">
+                <tree   default_order="branch_id, seq desc">
+
+                                          <field name="seq" readonly="1" string="رقم الطلب"/>
+
+                                                <field name="order_date" />
+
+                                                 <field name="branch_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create': True}" readonly="1" string="الفرع" />
+
+                                                <field name="journal_id" />
+
+<!--                                                <field name="main_cash_journal_id" />-->
+
+                                                <field name="description" />
+
+                                                <field name="posted_flag" />
+
+                                                <field name="amount" />
+
+                                                   <field name="user_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create': True}" readonly="1" string="مسئول المبيعات" />
+
+                                                   <field name="company_id" string="الشركة" readonly="1" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create': True}" groups="base.group_multi_company"/>
+
+                                                <field name="id" readonly="1" string="رقم التسلسلي"/>
+
+                                                <field name="account_move_id" invisible="1" />
+
+                </tree>
+            </field>
+        </record>
+        <record id="saleman_payment_search_view" model="ir.ui.view">
+            <field name="name">البحث في</field>
+            <field name="model">saleman.payment</field>
+            <field eval="10" name="priority"/>
+            <field name="arch" type="xml">
+                <search string=" البحث في ">
+
+
+                      <field name="seq" readonly="1" string="رقم الطلب"/>
+
+                            <field name="order_date" />
+
+                             <field name="branch_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create': True}" readonly="1" string="الفرع" />
+
+                            <field name="journal_id" />
+
+<!--                                                <field name="main_cash_journal_id" />-->
+
+                            <field name="description" />
+
+                            <field name="posted_flag" />
+
+                            <field name="amount" />
+
+                               <field name="user_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create': True}" readonly="1" string="مسئول المبيعات" />
+
+                               <field name="company_id" string="الشركة" readonly="1" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create': True}" groups="base.group_multi_company"/>
+
+                            <field name="id" readonly="1" string="رقم التسلسلي"/>
+
+                            <field name="account_move_id" invisible="1" />
+
+
+                </search>
+            </field>
+        </record>
+       <record id="action_saleman_payment_view" model="ir.actions.act_window">
+            <field name="name">الدفع للمندوبين</field>
+            <field name="res_model">saleman.payment</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="saleman_payment_tree_view"/>
+             <field name="target">current</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Click to create new
+                </p>
+            </field>
+        </record>
+
+      <menuitem id="saleman_payment_menu" name="الدفع للمندوبين"  parent="sale.sale_order_menu"
+                              sequence="70"
+                groups="qimamhd_sales_extend_13.group_allow_sale_man_payment_priv"
+
+                action="action_saleman_payment_view"/>
+    </data>
+
+</odoo>

@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_wo_salesman_assignments,wo.salesman.assignments,model_wo_salesman_assignments,,1,1,1,1
+access_saleman_payment,saleman.payment,model_saleman_payment,,1,1,1,1

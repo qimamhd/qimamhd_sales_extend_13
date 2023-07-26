@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="inherit_sale_order_sale_man_payment" model="ir.ui.view">
+                <field name="name">sales.order.sale_man.payment</field>
+                <field name="model">sale.order</field>
+                <field name="inherit_id" ref="sale.view_order_form"/>
+                  <field name="arch" type="xml">
+<!--account.action_account_payments-->
+                      <xpath expr="//button[@name='action_confirm']" position="after">
+                            <button name="action_register_sale_man_payment" id="pay_saleman_btn"  string="تسجيل عمولة للمندوبين"   type="object" class="oe_highlight"
+                                    groups="qimamhd_sales_extend_13.group_allow_sale_man_payment_priv"
+                                    attrs="{'invisible': [('state', '!=', 'sale')]}"/>
+
+
+
+                      </xpath>
+                      <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+                            <button type="object"
+                                    name="action_sale_man_payment"
+                                    class="oe_stat_button"
+
+                                     attrs="{'invisible': ['|',('sale_man_payment_count','=', 0),('sale_man_payment_count','=', False)]}"
+                                    icon="fa-money">
+                                   <field name="sale_man_payment_count"  attrs="{'invisible': ['|',('sale_man_payment_count','=', 0),('sale_man_payment_count','=', False)]}"  widget="statinfo" string="عمولات المندوبين"/>
+
+
+                            </button>
+                      </xpath>
+                  </field>
+        </record>
+
+    </data>
+</odoo>
+
+<!-- <button name="action_invoice_register_payment" id="account_invoice_payment_btn"-->
+<!--                                type="object" class="oe_highlight"-->
+<!--                                attrs="{'invisible': ['|', '|', ('state', '!=', 'posted'), ('invoice_payment_state', '!=', 'not_paid'), ('type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt'))]}"-->
+<!--                                string="Register Payment"-->
+<!--                                groups="account.group_account_invoice"/>-->

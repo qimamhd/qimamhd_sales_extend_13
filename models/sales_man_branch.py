@@ -10,3 +10,5 @@ class inherit_sales_mans(models.Model):
 
     sale_user = fields.Many2one('res.users', string='مستخدم المبيعات', index=True, track_visibility='onchange',
                                   track_sequence=2)
+    due_amount_type = fields.Selection([('percentage','نسبة'),('amount','مبلغ')], string="نوع استحقاق للمندوب", default='percentage')
+    due_amount = fields.Float(string="استحقاق المندوب")

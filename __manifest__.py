@@ -21,9 +21,14 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        # 'security/security.xml',
+        'security/security.xml',
         'views/sales_man_branch_view.xml',
         'views/hr_salesman_assignment.xml',
+        'views/res_config_setting.xml',
+        'views/company_view.xml',
+        'views/sale_man_payment_view.xml',
+        'views/so_saleman_payment.xml',
+
         #'wizards/recap.xml',
     ],
     # only loaded in demonstration mode

@@ -2,12 +2,9 @@
 <odoo>
 	<data>
 
-<!--		<record id="sales_man_branch_rules" model="ir.rule">-->
-<!--             <field name="name">sales man Branch</field>-->
-<!--             <field name="model_id" ref="qimamhd_sales_forms.model_custom_sales_mans"/>-->
-<!--             <field name="global" eval="True"/>-->
-<!--             <field name="domain_force">['|',('branch_id','=',False), ('branch_id', 'in',-->
-<!--                     user.allowed_branch_ids.ids)]</field>-->
-<!--         </record>-->
+		  <record id="group_allow_sale_man_payment_priv" model="res.groups">
+			<field name="name">السماح بالدفع للمندوبين </field>
+		</record>
+
 	</data>
 </odoo>
