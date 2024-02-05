@@ -13,6 +13,30 @@
                       
                   </field>
         </record>
+        <record id="inherit_sale_order_partner_tree" model="ir.ui.view">
+            <field name="name">sales.order.sale_man.partner.tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+              <field name="arch" type="xml">
+
+                  <xpath expr="//field[@name='partner_id']" position="after">
+                       <field name="partner_mobile"   />
+                  </xpath>
+                  
+              </field>
+    </record>
+    <record id="inherit_sale_order_partner_search" model="ir.ui.view">
+        <field name="name">sales.order.sale_man.partner.search</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation"/>
+          <field name="arch" type="xml">
+
+            <xpath expr="//search" position="inside">
+                   <field name="partner_mobile"   />
+              </xpath>
+              
+          </field>
+</record>
 
     </data>
 </odoo>
