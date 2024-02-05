@@ -20,10 +20,6 @@ class xx_account_move(models.Model):
                     rec.write({'sale_man_payment_id': False})
         return super(xx_account_move, self).unlink()
 
-
-
-
-
 class pl_closed(models.Model):
     _name = 'saleman.payment'
     _inherit = ['mail.thread']

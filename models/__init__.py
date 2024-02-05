@@ -6,3 +6,4 @@ from . import company
 from . import sale_man_payment
 from . import sale_order_sale_man_payment
 from . import sale_order_sale_man_payment
+from . import sale_order

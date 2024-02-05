@@ -34,8 +34,4 @@
     </data>
 </odoo>
 
-<!-- <button name="action_invoice_register_payment" id="account_invoice_payment_btn"-->
-<!--                                type="object" class="oe_highlight"-->
-<!--                                attrs="{'invisible': ['|', '|', ('state', '!=', 'posted'), ('invoice_payment_state', '!=', 'not_paid'), ('type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt'))]}"-->
-<!--                                string="Register Payment"-->
-<!--                                groups="account.group_account_invoice"/>-->
+ 

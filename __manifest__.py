@@ -28,6 +28,7 @@
         'views/company_view.xml',
         'views/sale_man_payment_view.xml',
         'views/so_saleman_payment.xml',
+        'views/sale_order.xml',
 
         #'wizards/recap.xml',
     ],
